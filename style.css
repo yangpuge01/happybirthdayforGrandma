@@ -39,10 +39,10 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    font-size: 3em; /* 调整文字大小 */
+    font-size: 15em; /* 文字大小增加到原来的5倍 */
     text-shadow: 2px 2px 4px #000;
     animation: text-effect 1.5s infinite;
-    z-index: 10;
+    z-index: 100; /* 确保文字在图片之上 */
 }
 
 @keyframes text-effect {
@@ -55,14 +55,15 @@ body, html {
 }
 
 button {
-    padding: 10px 20px; /* 增加按钮的大小 */
-    font-size: 1em; /* 调整字体大小 */
+    padding: 100px 200px; /* 增加按钮的大小到原来的10倍 */
+    font-size: 2em; /* 调整字体大小以适应按钮大小 */
     margin: 20px; /* 增加外边距 */
     cursor: pointer; /* 手指光标 */
     border: none;
     border-radius: 5px; /* 轻微圆角 */
     box-shadow: 0 0 5px rgba(0,0,0,0.3); /* 轻微阴影 */
     transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 100; /* 确保按钮在图片之上 */
 }
 
 button:hover {
