@@ -1,28 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.image-slider');
-    let isPaused = false; // ¿ØÖÆ¹ö¶¯ÔİÍ£µÄ±êÖ¾
+    let isPaused = false; // æ§åˆ¶æ»šåŠ¨æš‚åœçš„æ ‡å¿—
 
-    // ÔİÍ£¹ö¶¯º¯Êı
+    // æš‚åœæ»šåŠ¨å‡½æ•°
     function pauseScroll() {
         isPaused = true;
         slider.style.animationPlayState = 'paused';
     }
 
-    // ²¥·Å¹ö¶¯º¯Êı
+    // æ’­æ”¾æ»šåŠ¨å‡½æ•°
     function playScroll() {
         isPaused = false;
         slider.style.animationPlayState = 'running';
     }
 
-    // °ó¶¨°´Å¥ÊÂ¼ş
+    // ç»‘å®šæŒ‰é’®äº‹ä»¶
     document.getElementById('pause').addEventListener('click', pauseScroll);
     document.getElementById('play').addEventListener('click', playScroll);
 
-    // ¶¯Ì¬µ÷Õû¹ö¶¯ËÙ¶È£¬¿ÉÍ¨¹ıĞŞ¸Ä duration À´ÊµÏÖ
+    // åŠ¨æ€è°ƒæ•´æ»šåŠ¨é€Ÿåº¦ï¼Œå¯é€šè¿‡ä¿®æ”¹ duration æ¥å®ç°
     function setScrollSpeed(duration) {
         slider.style.animationDuration = duration;
     }
 
-    // Ê¾Àı£ºÉèÖÃ¹ö¶¯ËÙ¶ÈÎª30ÃëÍê³ÉÒ»´ÎÑ­»·
+    // ç¤ºä¾‹ï¼šè®¾ç½®æ»šåŠ¨é€Ÿåº¦ä¸º30ç§’å®Œæˆä¸€æ¬¡å¾ªç¯
     setScrollSpeed('30s');
 });
