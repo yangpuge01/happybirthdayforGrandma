@@ -4,17 +4,24 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background-color: #f0f0f0; /* 轻微的背景色 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-slider {
     display: flex;
     animation: slide 25s infinite linear;
     width: 500%;
+    max-height: 70%; /* 限制图片的最大高度 */
+    overflow: hidden;
 }
 
 .image-slider img {
     width: 20%;
-    transition: transform 0.5s ease;
+    object-fit: cover; /* 确保图片完整覆盖容器 */
 }
 
 @keyframes slide {
@@ -28,12 +35,14 @@ body, html {
 
 .happy-birthday-text {
     position: absolute;
-    top: 50%;
+    top: 10%; /* 调整文字位置 */
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
+    font-size: 3em; /* 调整文字大小 */
     text-shadow: 2px 2px 4px #000;
     animation: text-effect 1.5s infinite;
+    z-index: 10;
 }
 
 @keyframes text-effect {
@@ -43,4 +52,33 @@ body, html {
     50% {
         text-shadow: 2px 2px 4px #000, 0 0 45px #ff0, 0 0 10px #ff0;
     }
+}
+
+button {
+    padding: 10px 20px; /* 增加按钮的大小 */
+    font-size: 1em; /* 调整字体大小 */
+    margin: 20px; /* 增加外边距 */
+    cursor: pointer; /* 手指光标 */
+    border: none;
+    border-radius: 5px; /* 轻微圆角 */
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* 轻微阴影 */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #ddd; /* 鼠标悬停效果 */
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+#pause, #play {
+    position: fixed; /* 固定位置 */
+    bottom: 20px; /* 底部间隔 */
+}
+
+#pause {
+    left: 20px; /* 左侧间隔 */
+}
+
+#play {
+    right: 20px; /* 右侧间隔 */
 }
